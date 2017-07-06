@@ -2,11 +2,17 @@
   <div class="picker-mask mask-hook"></div>
   <div class="picker-panel panel-hook">
     <div class="picker-choose choose-hook">
-      <span class="cancel cancel-hook">取消</span>
-      <span class="confirm confirm-hook">确定</span>
+      <span class="cancel cancel-hook">{{cancel}}</span>
+      <span class="confirm confirm-hook">{{confirm}}</span>
       <h1 class="picker-title">{{title}}</h1>
     </div>
+    <div class="picker-columns">
+      {{#each cols}}
+        <div class="picker-cell">{{this}}</div>
+      {{/each}}
+    </div>
     <div class="picker-content">
+      <div class="background"></div>
       <div class="mask-top border-1px"></div>
       <div class="mask-bottom border-1px"></div>
       <div class="wheel-wrapper wheel-wrapper-hook">
@@ -21,6 +27,6 @@
         {{/each}}
       </div>
     </div>
-    <div class="picker-footer footer-hook"></div>
+    <div class="picker-footer"></div>
   </div>
 </div>

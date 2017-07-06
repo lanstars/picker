@@ -16,10 +16,13 @@ export default class Picker extends EventEmitter {
     super();
 
     this.options = {
+      cols: [],
       data: [],
       title: '',
       selectedIndex: null,
-      showCls: 'show'
+      showCls: 'show',
+      confirm: 'Confirm',
+      cancel: 'Cancel'
     };
 
     extend(this.options, options);
@@ -27,7 +30,10 @@ export default class Picker extends EventEmitter {
     this.data = this.options.data;
     this.pickerEl = createDom(pickerTemplate({
       data: this.data,
-      title: this.options.title
+      cols: this.options.cols,
+      title: this.options.title,
+      cancel: this.options.cancel,
+      confirm: this.options.confirm
     }));
 
     document.body.appendChild(this.pickerEl);
@@ -87,6 +93,11 @@ export default class Picker extends EventEmitter {
     });
 
     addEvent(this.cancelEl, 'click', () => {
+      this.hide();
+      this.trigger('picker.cancel');
+    });
+
+    addEvent(this.maskEl, 'click', () => {
       this.hide();
       this.trigger('picker.cancel');
     });
