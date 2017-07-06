@@ -21,6 +21,9 @@
 </section>
 
 <section class="main-content">
+  <h3>时间</h3>
+  <div id="date" data-value="1987-10-26">1987-10-26</div>
+
   <h3>单列筛选器</h3>
 
   <div id="picker1">点击选择</div>
@@ -53,7 +56,8 @@
 </section>
 
 </body>
-<script src="scripts/picker.min.js"></script>
+<script src="scripts/picker.js"></script>
+<script type="text/javascript" src="date/date.js"></script>
 <script>
   var data1 = [
     {
@@ -271,4 +275,15 @@
 </script>
 <script type="text/javascript" src="city/city.js"></script>
 <script type="text/javascript" src="city/index.js"></script>
+<script>
+  var datePicker = new DatePicker({
+    target: '#date',
+    value:'1987-10-26',
+    callback: function (format, year, month, date) {
+      console.log('DatePicker:#chose', format, year, month, date)
+    }
+  })
+  datePicker.init()
+</script>
+
 </html>
