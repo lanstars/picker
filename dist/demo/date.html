@@ -25,19 +25,23 @@
   }
 </style>
 <body>
-<h3>Picker</h3>
+
+<h3>Picker For Date</h3>
+
 <div id="chose">1987-10-26</div>
-<script src="../dist/picker.js"></script>
+<script src="../picker.min.js"></script>
 <script src="date.js"></script>
 <script>
   var datePicker = new DatePicker({
     target: '#chose',
     value:'1987-10-26',
     callback: function (format, year, month, date) {
-      console.log('DatePicker:#chose', format, year, month, date)
+      console.log('DatePicker:#chose', format, year, month, date);
+      document.querySelector('#chose').innerText = format;
     }
   })
   datePicker.init()
 </script>
+
 </body>
 </html>

@@ -4,7 +4,7 @@
   "description": "h5 picker inspired by ios UIPickerView",
   "main": "dist/picker.min.js",
   "scripts": {
-    "dev": "webpack-dev-server --port 9090 --inline --hot --content-base ./demo --host 0.0.0.0",
+    "dev": "webpack-dev-server --port 9090 --inline --hot --content-base ./dist --host 0.0.0.0",
     "build": "webpack --config webpack.prod.conf.js"
   },
   "repository": {
